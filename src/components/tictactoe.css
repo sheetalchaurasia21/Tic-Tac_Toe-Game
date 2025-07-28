@@ -1,102 +1,6 @@
-/* /* .boxes{
-    display: flex;
-    width: 180px;
-    height: 180px;
-    background-color: aquamarine;
-    border: 4px solid #011923;
-    border-radius: 12px;
-}
-.board{
-    display: flex;
-} */
- /* tictactoe.css */
-
-body {
-  margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-}
-
-.container {
-  text-align: center;
-  padding: 2rem;
-  border-radius: 20px;
-  background-color: #ffffff;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-  max-width: 500px;
-  margin: auto;
-}
-
-.Title {
-  font-size: 2rem;
-  color: #2c3e50;
-  margin-bottom: 2rem;
-  font-weight: bold;
-}
-.Title img{
-    padding: 20px 20px;
-    height: 50px;
-}
-
-.board {
-  display: flex;
-  flex-direction: column;
-  gap: 5px; /* Add vertical gap between rows */
-  align-items: center;
-  margin-bottom: 2rem;
-}
-
-.row1, .row2, .row3 {
-  display: flex;
-  gap: 5px; /* Add horizontal gap between boxes in each row */
-}
-
-
-.boxes {
-  width: 100px;
-  height: 100px;
-  background-color: #ecf0f1;
-  border-radius: 10px;
-  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  transition: transform 0.2s ease-in-out, background-color 0.2s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.boxes img{
-    margin: 50px 50px; 
-}
-
-.boxes:hover {
-  background-color: #dff9fb;
-  transform: scale(1.05);
-}
-
-.reserButton {
-  padding: 10px 20px;
-  font-size: 1rem;
-  background-color: #0984e3;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.reserButton:hover {
-  background-color: #74b9ff;
-  transform: scale(1.1);
-} */
-
 /* tictactoe.css */
 
+/* Base Styles */
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -107,6 +11,8 @@ body {
   min-height: 100vh;
   padding: 1rem;
   box-sizing: border-box;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 .container {
@@ -132,6 +38,7 @@ body {
   height: 40px;
 }
 
+/* Game Board */
 .board {
   display: flex;
   flex-direction: column;
@@ -147,6 +54,7 @@ body {
   gap: 5px;
 }
 
+/* Game Boxes */
 .boxes {
   width: 90px;
   height: 90px;
@@ -171,6 +79,7 @@ body {
   transform: scale(1.05);
 }
 
+/* Reset Button */
 .reserButton {
   padding: 10px 20px;
   font-size: 1rem;
@@ -188,10 +97,22 @@ body {
   transform: scale(1.1);
 }
 
-/* ✅ Responsive Tweaks */
-@media (max-width: 600px) {
+/* Media Queries for Responsive Design */
+
+/* Medium Screens (≤ 500px) */
+@media (max-width: 500px) {
+  .container {
+    padding: 1.5rem;
+    max-width: 90%;
+  }
+
   .Title {
     font-size: 1.5rem;
+  }
+
+  .Title img {
+    height: 30px;
+    padding: 8px;
   }
 
   .boxes {
@@ -199,27 +120,35 @@ body {
     height: 70px;
   }
 
+  .boxes img {
+    width: 65%;
+    height: 65%;
+  }
+
   .reserButton {
     font-size: 0.9rem;
     padding: 8px 16px;
   }
-
-  .Title img {
-    height: 30px;
-  }
 }
 
-@media (max-width: 400px) {
-  .boxes {
-    width: 60px;
-    height: 60px;
-  }
-
+/* Small Screens (≤ 350px) */
+@media (max-width: 350px) {
   .Title {
     font-size: 1.2rem;
   }
 
+  .boxes {
+    width: 55px;
+    height: 55px;
+  }
+
+  .boxes img {
+    width: 60%;
+    height: 60%;
+  }
+
   .reserButton {
     font-size: 0.8rem;
+    padding: 6px 12px;
   }
 }
